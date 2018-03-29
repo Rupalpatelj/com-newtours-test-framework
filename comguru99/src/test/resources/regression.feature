@@ -37,4 +37,4 @@ Feature: Check Login functionalty
     Examples:
       | type       | passengers | Departing From | Arriving In | Service Class  | First Name|Last Name|Number|Address   |City    |Postal code|Country|
       | Round Trip | 1          | London         | New York    | Economy class  |Rupal      |Patel    |8765  |merseywalk|Northolt|ub5 6th    |UNITED KINGDOM|
-
+      | Round Trip | 1          | London         | New York    | Economy class  |Sudeep      |Patel    |8765  |SouthEsk Road|East Ham|E7 8LL    |UNITED KINGDOM|
