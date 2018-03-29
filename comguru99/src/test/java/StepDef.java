@@ -218,8 +218,8 @@ public class StepDef {
     public void i_should_navigate_to(String arg1) throws IOException{
        String actual=driver.findElement(By.cssSelector(".frame_header_info>b>font")).getText();
         assertThat(actual,containsString(arg1));
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("c:\\temp\\screenshot.png"));
+        //File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        //FileUtils.copyFile(scrFile, new File("c:\\temp\\screenshot.png"));
 
     }
 
