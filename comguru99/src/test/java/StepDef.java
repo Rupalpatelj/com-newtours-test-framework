@@ -1,3 +1,4 @@
+import cucumber.api.DataTable;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -166,15 +168,21 @@ public class StepDef {
    }
 
     @When("^i enter customer firstname \"([^\"]*)\"$")
-    public void i_enter_customer_firstname(String firstname){
+    public void i_enter_customer_firstname(String firstname,DataTable userName){
+        List<Map<String,String>> data = userName.asMaps(String.class,String.class);
+        driver.findElement(By.name("passFirst0")).sendKeys(data.get(0).get("Name"));
+        driver.findElement(By.name("passFirst1")).sendKeys(data.get(1).get("Name"));
 
-        driver.findElement(By.name("passFirst0")).sendKeys(firstname);
     }
 
     @When("^i enter customer lastname \"([^\"]*)\"$")
-    public void i_enter_customer_lastname(String lastname) {
-       driver.findElement(By.name("passLast0")).sendKeys(lastname);
-    }
+    public void i_enter_customer_lastname(String lastname,DataTable userLastname)
+    {
+
+        List<Map<String,String>> data = userLastname.asMaps(String.class,String.class);
+        driver.findElement(By.name("passLast0")).sendKeys(data.get(0).get("Last name"));
+        driver.findElement(By.name("passLast1")).sendKeys(data.get(1).get("Last name"));
+   }
 
     @When("^i enter customer card number \"([^\"]*)\"$")
     public void i_enter_customer_card_number(String cardnumber){

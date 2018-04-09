@@ -25,7 +25,13 @@ Feature: Check Login functionalty
     And i should navigate to book flight page to get the ticket
 
     And i enter customer firstname "<First Name>"
+    |Name    |
+    |sanvi   |
+    |shrey   |
     And i enter customer lastname "<Last Name>"
+    |Last name|
+    |patel    |
+    |patel    |
     And i enter customer card number "<Number>"
     And i enter customer address "<Address>"
     And i enter customer city "<City>"
@@ -36,7 +42,5 @@ Feature: Check Login functionalty
 
     Examples:
       | type       | passengers | Departing From | Arriving In | Service Class  | First Name|Last Name|Number|Address   |City    |Postal code|Country|
-      | Round Trip | 1          | London         | New York    | Economy class  |Rupal      |Patel    |8765  |merseywalk|Northolt|ub5 6th    |UNITED KINGDOM|
+      | Round Trip | 2          | London         | New York    | Economy class  |Rupal      |Patel    |8765  |merseywalk|Northolt|ub5 6th    |UNITED KINGDOM|
       | One way  | 2          | London         | New York    | Economy class  |Sudeep      |Patel    |1234  |SouthEsk Road|East Ham|E7 8LL    |UNITED KINGDOM|
-      | Round Trip | 3          | London         | New York    | Economy class  |Akash      |Patel    |6544  |SouthEsk Road|East Ham|E7 8LL    |UNITED KINGDOM|
-      | Round Trip | 4          | London         | New York    | Economy class  |Vinay      |Patel    |6778  |SouthEsk Road|East Ham|E7 8LL    |UNITED KINGDOM|
